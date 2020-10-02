@@ -2,6 +2,15 @@
 
 ![Image](https://i.imgur.com/9uHibY0.jpg)
 
+##Install
+1. Copy to /path/of/heimdall/config/monitor/
+1. Edit docker-compose according to the example below
+1. Edit the reverse proxy according to the example below
+1. For docker stats:
+  1. Copy stats.sh to your host
+  1. Edit stats.sh and fix the path to your /path/of/heimdall/config/monitor/libs/data/stats folder
+  1. Create a cron job to execute stats.sh once a minute
+
 ```YAML
   heimdall:
     image: linuxserver/heimdall
@@ -10,14 +19,14 @@
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - DOWNLOADERURL=http://qbittorrent:8080
-      - DOWNLOADERAUTH=username=<qbittorrent-user>&password=<qbittorrent-password>
-      - STREAMSAPI=http://jellyfin:8096/sessions?api_key=<api-key>
-      - DOCKERSTATS=true
+      - DOWNLOADERURL=http://qbittorrent:8080 #optional - for qbittorrent downloads
+      - DOWNLOADERAUTH=username=<qbittorrent-user>&password=<qbittorrent-password> #optional - for qbittorrent downloads
+      - STREAMSAPI=http://jellyfin:8096/sessions?api_key=<api-key> #optional - for jellyfin streams
+      - DOCKERSTATS=true #optional - for docker top
     volumes:
       - ${DATADIR}/apps/heimdall:/config
-      - ${DATADIR}/apps/heimdall/monitor:/var/www/localhost/heimdall/storage/app/public/monitor
-      - ${DATADIR}/apps/heimdall/monitor/www.conf:/etc/php7/php-fpm.d/www.conf
+      - ${DATADIR}/apps/heimdall/monitor:/var/www/localhost/heimdall/storage/app/public/monitor #required - change to your heimdall config folder
+      - ${DATADIR}/apps/heimdall/monitor/www.conf:/etc/php7/php-fpm.d/www.conf #required - change to your heimdall config folder
     networks:
       - internal
     restart: always
