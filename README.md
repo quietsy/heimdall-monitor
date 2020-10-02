@@ -7,9 +7,9 @@
 1. Edit docker-compose according to the example below
 1. Edit the reverse proxy according to the example below
 1. For docker stats:
-  1. Copy stats.sh to your host
-  1. Edit stats.sh and fix the path to your /path/of/heimdall/config/monitor/libs/data/stats folder
-  1. Create a cron job to execute stats.sh once a minute
+    1. Copy stats.sh to your host
+    1. Edit stats.sh and fix the path to your /path/of/heimdall/config/monitor/libs/data/stats folder
+    1. Create a cron job to execute stats.sh once a minute
 
 ```YAML
   heimdall:
