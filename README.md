@@ -5,7 +5,7 @@
 ## Install
 1. Copy to /path/of/heimdall/config/monitor/
 1. Edit docker-compose according to the example below
-1. Edit the reverse proxy according to the example below
+1. Edit the reverse proxy according to the example below (replace <heimdall-domain>)
 1. For docker stats:
     1. Copy stats.sh to your host
     1. Edit stats.sh and fix the path to your /path/of/heimdall/config/monitor/libs/data/stats folder
@@ -24,9 +24,9 @@
       - STREAMSAPI=http://jellyfin:8096/sessions?api_key=<api-key> #optional - for jellyfin streams
       - DOCKERSTATS=true #optional - for docker top
     volumes:
-      - ${DATADIR}/apps/heimdall:/config
-      - ${DATADIR}/apps/heimdall/monitor:/var/www/localhost/heimdall/storage/app/public/monitor #required - change to your heimdall config folder
-      - ${DATADIR}/apps/heimdall/monitor/www.conf:/etc/php7/php-fpm.d/www.conf #required - change to your heimdall config folder
+      - /path/of/heimdall/config:/config
+      - /path/of/heimdall/config/monitor:/var/www/localhost/heimdall/storage/app/public/monitor #required - change to your heimdall config folder
+      - /path/of/heimdall/config/monitor/www.conf:/etc/php7/php-fpm.d/www.conf #required - change to your heimdall config folder
     networks:
       - internal
     restart: always
