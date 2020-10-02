@@ -2,7 +2,7 @@
 
 ![Image](https://i.imgur.com/9uHibY0.jpg)
 
-##Install
+## Install
 1. Copy to /path/of/heimdall/config/monitor/
 1. Edit docker-compose according to the example below
 1. Edit the reverse proxy according to the example below
