@@ -1,5 +1,6 @@
 # heimdall-monitor
 
+```YAML
   heimdall:
     image: linuxserver/heimdall
     container_name: heimdall
@@ -18,8 +19,8 @@
     networks:
       - internal
     restart: always
-
-
+```
+```Nginx
     server {
     listen 80;
     server_name homepage.x;
@@ -47,3 +48,4 @@
         sub_filter_once on;
     }
 }
+```
