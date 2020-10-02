@@ -1,0 +1,560 @@
+html {
+	height: 100%
+}
+
+[class*="icon-"] {
+	font-family: "Comic Sans MS";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+body {
+	font-size: 14px;
+	font-family: "Comic Sans MS";
+	margin: 0 auto;
+	color: #E5EAEA;
+	background-color: #1f1f1f
+}
+
+a {
+	color: #99AEC4
+}
+
+a:hover {
+	color: #a9bbcd;
+	text-decoration: none
+}
+
+::-moz-selection {
+	background-color: #7994b1;
+	color: #fafbfc
+}
+
+::selection {
+	background-color: #7994b1;
+	color: #fafbfc
+}
+
+nav[role="main"] {
+	background-color: #99AEC4;
+	height: 60px;
+	width: 100%;
+	padding-left: 5px;
+	color: #1f1f1f;
+	font-size: 16px;
+	text-align: center;
+	z-index: 2
+}
+
+nav[role="main"] #appname {
+	float: left;
+	width: 150px;
+	text-align: left
+}
+
+nav[role="main"] #appname a {
+	color: #fff;
+	text-decoration: none
+}
+
+nav[role="main"] #appname a:first-child {
+	font-size: 24px
+}
+
+nav[role="main"] #appname a:first-child span[class^="icon-"] {
+	font-size: 30px;
+	margin-right: 10px
+}
+
+nav[role="main"] #appname a:last-child {
+	display: block;
+	font-size: 11px;
+	font-style: italic
+}
+
+nav[role="main"] #hostname {
+	float: left;
+	margin-left: 110px;
+	line-height: 60px
+}
+
+nav[role="main"] #hostname a {
+	color: #1f1f1f;
+	text-decoration: none
+}
+
+nav[role="main"] #update {
+	float: left;
+	margin-left: 100px;
+	line-height: 60px;
+	font-size: 13px
+}
+
+nav[role="main"] #update a {
+	color: #fff
+}
+
+nav[role="main"]>ul {
+	text-align: right;
+	list-style-type: none
+}
+
+nav[role="main"]>ul>li {
+	display: inline-block
+}
+
+nav[role="main"]>ul>li>a {
+	display: inline-block;
+	padding: 13px 15px;
+	color: #1f1f1f;
+	text-decoration: none
+}
+
+nav[role="main"]>ul>li>a:hover {
+	background: #dae1e9
+}
+
+nav[role="main"]>ul>li>a>span[class^="icon-"] {
+	font-size: 30px
+}
+
+#main-container {
+	overflow: auto;
+    display: flex;
+    flex-wrap: wrap; /* Optional. only if you want the items to wrap */
+    justify-content: center; /* For horizontal alignment */
+    align-items: center;
+}
+
+table:not(.no-style) {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 13px
+}
+
+table:not(.no-style) tr {
+	border-bottom: 1px solid #ebebeb;
+}
+
+table:not(.no-style) thead tr {
+	border-top: none
+}
+
+table:not(.no-style) tbody tr:last-child {
+	border-bottom: none
+}
+
+table:not(.no-style) tbody tr td, table:not(.no-style) thead tr th {
+	padding: 6px 8px;
+	position: relative;
+	text-align: left
+}
+
+table:not(.no-style) tbody tr td:last-child, table:not(.no-style) thead tr th:last-child {
+	border-right: none
+}
+
+table:not(.no-style) tbody tr td:first-child, table:not(.no-style) thead tr th:first-child {
+	border-left: none
+}
+
+table:not(.no-style) thead {
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold
+}
+
+table:not(.no-style) thead tr th {
+	text-align: center
+}
+
+table:not(.no-style) tbody tr:hover {
+	background: rgba(153, 174, 196, 0.8)
+}
+
+table.firstBold tbody tr td:first-child {
+	font-weight: bold
+}
+
+.progressbar-wrap {
+	width: 100%;
+	background-color: rgba(153, 174, 196, 0.2)
+}
+
+.progressbar-wrap .progressbar {
+	text-indent: 5px
+}
+
+.progressbar-wrap .progressbar.green {
+	background-color: #7BCE6C
+}
+
+.progressbar-wrap .progressbar.orange {
+	background-color: #E3BB80
+}
+
+.progressbar-wrap .progressbar.red {
+	background-color: #CF6B6B
+}
+
+.reload.spin {
+	-moz-animation: spin 2000ms infinite linear;
+	-webkit-animation: spin 2000ms infinite linear;
+	animation: spin 2000ms infinite linear
+}
+
+@-ms-keyframes spin {
+	from {
+		-ms-transform: rotate(0deg)
+	}
+
+	to {
+		-ms-transform: rotate(360deg)
+	}
+
+}
+
+@-moz-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg)
+	}
+
+	to {
+		-moz-transform: rotate(360deg)
+	}
+
+}
+
+@-webkit-keyframes spin {
+	from {
+		-webkit-transform: rotate(0deg)
+	}
+
+	to {
+		-webkit-transform: rotate(360deg)
+	}
+
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg)
+	}
+
+	to {
+		transform: rotate(360deg)
+	}
+
+}
+
+.box#esm-load_average h3 {
+	font-weight: normal
+}
+
+@media only screen and (max-width:1024px) {
+	.column-left, .column-right {
+		float: left;
+	}
+
+	.box {
+		margin-right: 0 !important;
+		margin-left: 0 !important
+	}
+
+}
+
+@media only screen and (max-width:550px) {
+	nav[role="main"] #appname {
+		width: 135px
+	}
+
+	nav[role="main"] #hostname {
+		margin-left: 0;
+		font-size: 12px
+	}
+
+	nav[role="main"] #update {
+		margin-left: 0;
+		font-size: 9px;
+		position: absolute;
+		top: 47px;
+		line-height: inherit
+	}
+
+	nav[role="main"] ul>li>a {
+		padding: 12px 0
+	}
+
+	.box#esm-load_average div {
+		width: 100%;
+		float: none
+	}
+
+	.box#esm-disk .filesystem {
+		display: none
+	}
+
+}
+
+* {
+	padding: 0;
+	margin: 0
+}
+
+*:focus {
+	outline: none
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.cls:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+img {
+	border: 0
+}
+
+.debug {
+	border: 1px solid red
+}
+
+.text_left, .t-left {
+	text-align: left !important
+}
+
+.text_right, .t-right {
+	text-align: right !important
+}
+
+.text_center, .t-center {
+	text-align: center !important
+}
+
+.pfixed {
+	position: fixed !important
+}
+
+.f-left {
+	float: left
+}
+
+.f-right {
+	float: right
+}
+
+.column-left {
+	float: left;
+}
+
+.column-right {
+	float: left
+}
+
+.column-33 {
+	width: 32%
+}
+
+.column-66 {
+	width: 66%
+}
+
+.w10p {
+	width: 10%
+}
+
+.w15p {
+	width: 15%
+}
+
+.w20p {
+	width: 20%
+}
+
+.w33p {
+	width: 33%
+}
+
+.w35p {
+	width: 35%
+}
+
+.w50p {
+	width: 50%
+}
+
+.w100p {
+	width: 100%
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 1px 0px 3px rgba(0, 0, 0, 0.2);
+	background-color: #F5F5F5
+}
+
+::-webkit-scrollbar-track:hover {
+	background-color: #EFEFEF
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: #F5F5F5
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #959595
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #6B6B6B
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: #555
+}
+
+span.label {
+	padding: 1px 3px 2px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	white-space: nowrap;
+	background-color: #bfbfbf;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px
+}
+
+span.label.default {
+	background-color: #bfbfbf
+}
+
+span.label.success {
+	background-color: #46a546
+}
+
+span.label.warning {
+	background-color: #f89406
+}
+
+span.label.important {
+	background-color: #c43c35
+}
+
+span.label.error {
+	background-color: #c43c35
+}
+
+span.label.notice {
+	background-color: #62cffc
+}
+
+.box {
+  	background-color: rgba(0,0,0,0.5);
+	box-shadow: 3px 3px 0 rgba(205, 215, 226, 0.6);
+	margin: 5px;
+	border: 1px solid #cdd7e2;
+	padding: 2px;
+  	align-self: flex-start;
+}
+
+.box .box-header {
+  	background-color: rgba(0,0,0,0.2);
+	height: 35px
+}
+
+.box .box-header h1 {
+	color: #fff;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 33px;
+	padding-left: 10px;
+}
+
+.box .box-header h1:first-letter {
+	font-size: 20px
+}
+
+.box .box-header ul {
+	float: right;
+	list-style-type: none
+}
+
+.box .box-header ul li {
+	display: inline;
+	margin-left: -3px
+}
+
+.box .box-header ul li a {
+	color: #fff;
+	font-size: 20px;
+	line-height: 35px;
+	padding: 4px 10px;
+	text-decoration: none
+}
+
+.box .box-header ul li a:hover:not(.disabled) {
+	background: #c3cfdc;
+	color: #829cb7 !important
+}
+
+.box .box-header ul li a.disabled:hover {
+	cursor: default
+}
+
+.box .box-header ul li:first-child {
+	margin-left: 0
+}
+
+.box .box-header ul li:last-child a {
+	border-right: none
+}
+
+.box .box-header ul li.active a {
+	background: #fafafa;
+	cursor: default
+}
+
+.box .box-content {
+	padding: 6px
+}
+
+.box .box-content table a {
+	text-decoration: none;
+	color: #829cb7
+}
+
+.box .box-content table a:hover {
+	color: #c3cfdc
+}
+
+.box .box-content.faded {
+	opacity: .4
+}
+
+.box .box-footer {
+	background: #e8e8e8;
+	padding: 7px
+}
+
+.box .box-footer span[class^="icon-"] {
+	font-size: 14px;
+	margin-right: 5px
+}
