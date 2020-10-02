@@ -1,5 +1,7 @@
 # heimdall-monitor
 
+![Image](https://i.imgur.com/9uHibY0.jpg)
+
 ```YAML
   heimdall:
     image: linuxserver/heimdall
@@ -8,9 +10,9 @@
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - DOWNLOADERURL=${DOWNLOADERURL}
-      - DOWNLOADERAUTH=${DOWNLOADERAUTH}
-      - STREAMSAPI=${STREAMSAPI}
+      - DOWNLOADERURL=http://qbittorrent:8080
+      - DOWNLOADERAUTH=username=<qbittorrent-user>&password=<qbittorrent-password>
+      - STREAMSAPI=http://jellyfin:8096/sessions?api_key=<api-key>
       - DOCKERSTATS=true
     volumes:
       - ${DATADIR}/apps/heimdall:/config
@@ -43,7 +45,7 @@
             @media screen and (max-width: 1600px) { #myFrame { height: 350px; } }
             @media screen and (max-width: 900px) { #myFrame { height: 500px; } } 
         </style>
-        <iframe src="http://homepage.x/storage/monitor/" width="100%" height="200px" id="myFrame" frameborder="0" allowtransparency="true">
+        <iframe src="http://<heimdall-domain>/storage/monitor/" width="100%" height="200px" id="myFrame" frameborder="0" allowtransparency="true">
         </iframe>';
         sub_filter_once on;
     }
