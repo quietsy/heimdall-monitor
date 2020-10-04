@@ -13,6 +13,7 @@
     1. Edit stats.sh and fix the path to your /`<path of heimdall config>`/monitor/libs/data/stats folder
     1. Create a cron job to execute stats.sh once a minute
 
+## Docker Compose
 ```YAML
   heimdall:
     image: linuxserver/heimdall
@@ -33,6 +34,8 @@
       - internal
     restart: always
 ```
+
+## Reverse Proxy
 ```Nginx
   server {
       listen 443 ssl;
