@@ -1,5 +1,7 @@
 # heimdall-monitor
 
+## Warning - this is an unpolished example of a dashboard, it doesn't support all configurations and services.
+
 ![Image](https://i.imgur.com/9uHibY0.jpg)
 
 ## Install
