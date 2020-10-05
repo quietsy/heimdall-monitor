@@ -1,4 +1,5 @@
-# heimdall-monitor
+# Heimdall Monitor
+###### [heimdall-monitor](https://github.com/quietsy/heimdall-monitor) [heimdall-monitor-mod](https://github.com/quietsy/heimdall-monitor-mod)
 
 ## Warning - this is an alpha, it doesn't support all configurations and services.
 
@@ -42,11 +43,9 @@
 ```
 
 ## Uninstall
+1. Stop the heimdall container
 1. Remove the added environment variables from the docker compose
-1. Remove stats.sh and the cron job from the host
-1. In heimdall's config folder:
-    1. Remove the monitor folder
-    1. Remove nginx/site-confs/default
-    1. Move nginx/default.backup to nginx/site-confs/default
-    1. Remove php/www2.conf
-    1. Move php/www2.conf.backup to php/www2.conf
+1. If you enabled docker stats, remove stats.sh and the cron job from the host
+1. In heimdall's config folder delete monitor, nginx and php
+1. Start the heimdall container
+1. If you want to restore the nginx and php folders, you can find them in the config folder under backup
