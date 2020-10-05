@@ -32,9 +32,9 @@ else
             $mounted_points[] = trim($mount);
 
             $datas[$key] = array(
-                'total'         => Misc::getSize($total * 1024),
-                'used'          => Misc::getSize($used * 1024),
-                'free'          => Misc::getSize($free * 1024),
+                'total'         => Misc::getSize($total ),
+                'used'          => Misc::getSize($used ),
+                'free'          => Misc::getSize($free ),
             );
 
             $datas[$key]['filesystem'] = $filesystem;
