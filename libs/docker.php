@@ -3,7 +3,7 @@ require '../autoload.php';
 
 $datas = array();
 
-$a = exec('cat data/stats | tail -n +2 | sort --field-separator=\',\' -k 2 -h -r', $containers);
+$a = exec('cat .data/stats | tail -n +2 | sort --field-separator=\',\' -k 2 -h -r', $containers);
 
 $key = 0;
 

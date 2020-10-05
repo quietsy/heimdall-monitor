@@ -1,0 +1,70 @@
+## Version 2018/03/06 - Changelog: https://github.com/linuxserver/docker-heimdall/commits/master/root/defaults/default
+
+server {
+	listen 80 default_server;
+
+	listen 443 ssl;
+
+	server_name _;
+
+	ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;
+
+	client_max_body_size 0;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+
+        proxy_set_header Accept-Encoding "";
+        sub_filter
+        '<main>'
+        '<main>
+        <style type="text/css"> 
+            @media screen and (max-width: 1600px) { #myFrame { height: 350px; } }
+            @media screen and (max-width: 900px) { #myFrame { height: 500px; } } 
+        </style>
+        <iframe src="/storage/monitor/" width="100%" height="200px" id="myFrame" frameborder="0" allowtransparency="true">
+        </iframe>';
+        sub_filter_once on;
+    }
+}
+
+server {
+	listen 8080 default_server;
+
+	root /var/www/localhost/heimdall/public;
+	index index.php index.html index.htm;
+
+	server_name _;
+
+	ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;
+
+	client_max_body_size 0;
+	
+    error_page 599 = @noauth;
+
+    location / {
+            if (!-f /config/nginx/.htpasswd) {
+                    return 599;
+            }
+            auth_basic "Restricted";
+            auth_basic_user_file /config/nginx/.htpasswd;
+            try_files $uri $uri/ /index.php?$args;
+    }
+
+    location @noauth {
+            try_files $uri $uri/ /index.php?$args;
+    }
+
+	location ~ \.php$ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		# With php5-cgi alone:
+		fastcgi_pass 127.0.0.1:9000;
+		# With php5-fpm:
+		#fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_index index.php;
+		include /etc/nginx/fastcgi_params;
+
+	}
+}

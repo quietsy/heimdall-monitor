@@ -3,8 +3,8 @@ error_reporting(0);
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 require '../autoload.php';
-$a = shell_exec('curl -i --header \'Referer: '.getenv('DOWNLOADERURL').'\' --data \''.getenv('DOWNLOADERAUTH').'\' --cookie-jar data/qbcookie '.getenv('DOWNLOADERURL').'/api/v2/auth/login');
-$response = shell_exec('curl --cookie data/qbcookie '.getenv('DOWNLOADERURL').'/api/v2/torrents/info');
+$a = shell_exec('curl -i --header \'Referer: '.getenv('QBITTORRENTURL').'\' --data \''.getenv('QBITTORRENTAUTH').'\' --cookie-jar .data/qbcookie '.getenv('QBITTORRENTURL').'/api/v2/auth/login');
+$response = shell_exec('curl --cookie .data/qbcookie '.getenv('QBITTORRENTURL').'/api/v2/torrents/info');
 $torrents = json_decode($response);
 
 $datas = array();

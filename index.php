@@ -86,7 +86,7 @@ require 'autoload.php';
         </div>
     </div>
     <?php } ?>
-    <?php if(getenv("STREAMSAPI") !== false){ ?>
+    <?php if(getenv("JELLYFINAPI") !== false){ ?>
     <div class="box column-right" id="esm-streams">
         <div class="box-header">
             <h1>Streams</h1>
@@ -107,7 +107,7 @@ require 'autoload.php';
         </div>
     </div>
     <?php } ?>
-    <?php if(getenv("DOWNLOADERURL") !== false){ ?>
+    <?php if(getenv("QBITTORRENTURL") !== false){ ?>
     <div class="box column-right" id="esm-downloads">
         <div class="box-header">
             <h1>Downloads</h1>
