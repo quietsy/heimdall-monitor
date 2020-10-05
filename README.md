@@ -19,7 +19,8 @@
     1. Remove the monitor folder
     1. Remove nginx/site-confs/default
     1. Move nginx/default.backup to nginx/site-confs/default
-    1. Remove clear_env=no from php/www2.conf
+    1. Remove php/www2.conf
+    1. Move php/www2.conf.backup to php/www2.conf
 
 ## Docker Compose
 ```YAML
