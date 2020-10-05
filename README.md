@@ -1,5 +1,6 @@
 # Heimdall Monitor
-###### [heimdall-monitor](https://github.com/quietsy/heimdall-monitor) [heimdall-monitor-mod](https://github.com/quietsy/heimdall-monitor-mod)
+###### Source - [heimdall-monitor](https://github.com/quietsy/heimdall-monitor)
+###### Mod Source - [heimdall-monitor-mod](https://github.com/quietsy/heimdall-monitor-mod)
 
 ## Warning - this is an alpha, it doesn't support all configurations and services.
 
