@@ -10,7 +10,7 @@
 1. Edit docker-compose according to the example below
 1. **OPTIONAL** - for docker stats:
     1. Move stats.sh to the host
-    1. Edit stats.sh and fix the path to the /`<path of heimdall config>`/monitor/libs/.data/stats folder
+    1. Edit stats.sh and fix the path to heimdall config folder /`<path of heimdall config>`/monitor/libs/.data/stats
     1. Create a cron job to execute stats.sh once a minute
 
 ## Docker Compose
