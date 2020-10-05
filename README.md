@@ -1,6 +1,6 @@
 # heimdall-monitor
 
-## Warning - this is an unpolished example of a dashboard, it doesn't support all configurations and services.
+## Warning - this is an alpha, it doesn't support all configurations and services.
 
 ![Image](https://i.imgur.com/9uHibY0.jpg)
 
@@ -9,11 +9,10 @@
 1. OPTIONAL - For docker stats:
     1. Move stats.sh to the host
     1. Edit stats.sh and fix the path to the /`<path of heimdall config>`/monitor/libs/data/stats folder
-    1. Run chmod +x stats.sh
     1. Create a cron job to execute stats.sh once a minute
 
 ## Uninstall
-1. Remove the environment variables from the docker compose
+1. Remove the added environment variables from the docker compose
 1. Remove stats.sh and the cron job from the host
 1. In heimdall's config folder:
     1. Remove the monitor folder
@@ -22,8 +21,15 @@
     1. Remove php/www2.conf
     1. Move php/www2.conf.backup to php/www2.conf
 
+| Parameter | Function |
+| --- | --- |
+| `DOCKER_MODS=quietsy/heimdall-monitor-mod:latest` | enables the mod |
+| `QBITTORRENTURL=http://qbittorrent:8080` | **optional** - enable qbittorrent downloads monitoring |
+| `QBITTORRENTAUTH=username=<qbittorrent-user>&password=<qbittorrent-password>` | **optional** - login details for qbittorrent downloads monitoring |
+| `JELLYFINAPI=http://jellyfin:8096/sessions?api_key=<api-key>` | **optional** - enable active jellyfin streams monitoring |
+| `DOCKERSTATS=true` | **optional** - enable docker stats monitoring (requires additional installation steps) |
 
-## Docker Compose
+## Example Docker Compose
 ```YAML
   heimdall:
     image: linuxserver/heimdall
