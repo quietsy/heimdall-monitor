@@ -13,6 +13,9 @@
     1. Edit stats.sh and fix the path to heimdall config folder /`<path of heimdall config>`/monitor/libs/.data/stats
     1. Create a cron job to execute stats.sh once a minute
 
+## Usage
+Use ports 8080 and 4443 instead of 80 and 443.
+
 ## Docker Compose
 
 | Parameter | Function |

@@ -1,0 +1,27 @@
+server {
+	listen 8080;
+    listen 4443 ssl;
+
+	server_name _;
+
+	ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;
+
+	client_max_body_size 0;
+
+    location / {
+        proxy_pass $scheme://127.0.0.1;
+
+        proxy_set_header Accept-Encoding "";
+        sub_filter
+        '<main>'
+        '<main>
+        <style type="text/css"> 
+            @media screen and (max-width: 1600px) { #myFrame { height: 350px; } }
+            @media screen and (max-width: 900px) { #myFrame { height: 500px; } } 
+        </style>
+        <iframe src="/storage/monitor/" width="100%" height="200px" id="myFrame" frameborder="0" allowtransparency="true">
+        </iframe>';
+        sub_filter_once on;
+    }
+}
